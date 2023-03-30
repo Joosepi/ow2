@@ -98,7 +98,7 @@ def update():
 
     # If the robot is within the field of view, draw a circle on it and print a message
     if robot_center:
-        if frame.shape[1] / 2 - FOV / 2 <= robot_center[0] <= frame.shape[1] 
+        if frame.shape[1] / 2 - FOV / 2 <= robot_center[0] <= frame.shape[1] :
 if frame.shape[1] / 2 - FOV / 2 <= robot_center[0] <= frame.shape[1] / 2 + FOV / 2:
     # Draw a circle on the robot center
     cv2.circle(frame, robot_center, 10, (0, 255, 0), -1)
