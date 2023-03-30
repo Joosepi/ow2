@@ -113,6 +113,7 @@ if frame.shape[1] / 2 - FOV / 2 <= robot_center[0] <= frame.shape[1] / 2 + FOV /
     # Print a message
     cv2.putText(frame, "Robot in Field of View", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
+
 # Convert the RGB image back to BGR for display
 image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
 
