@@ -1,14 +1,23 @@
 import cv2
 import mediapipe as mp
+import numpy as np
 import time
+import ctypes
 
 mp_drawing = mp.solutions.drawing_utils
 mp_pose = mp.solutions.pose
 
-cap = cv2.VideoCapture(0)
-robot_center = None
-prediction_on = False
+
 FOV = 100  # Field of View
+prediction_on = False
+
+# Load the DLL file
+dll_path = "path/to/dll/file.dll"
+my_dll = ctypes.WinDLL(dll_path)
+
+# Define the function that calls the DLL file
+def aim_at_point(x, y):
+    my_dll.aim_at_point(x, y)
 
 with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as pose:
     while cap.isOpened():
