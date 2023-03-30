@@ -99,7 +99,7 @@ def update():
     # If the robot is within the field of view, draw a circle on it and print a message
     if robot_center:
         if frame.shape[1] / 2 - FOV / 2 <= robot_center[0] <= frame.shape[1] 
-if 2 + FOV / 2 and frame.shape[0] / 2 - FOV / 2 <= robot_center[1] <= frame.shape[0] / 2 + FOV / 2:
+if frame.shape[1] / 2 - FOV / 2 <= robot_center[0] <= frame.shape[1] / 2 + FOV / 2 and frame.shape[0] / 2 - FOV / 2 <= robot_center[1] <= frame.shape[0] / 2 + FOV / 2:
     # Draw a circle on the robot center
     cv2.circle(frame, robot_center, 10, (0, 255, 0), -1)
 
@@ -114,7 +114,7 @@ if 2 + FOV / 2 and frame.shape[0] / 2 - FOV / 2 <= robot_center[1] <= frame.shap
     cv2.putText(frame, "Robot in Field of View", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
 # Convert the RGB image back to BGR for display
-image = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
+image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
 
 # Display the image on the canvas
 canvas.image = tk.PhotoImage(data=cv2.imencode('.png', image)[1].tobytes())
@@ -126,3 +126,4 @@ root.after(10, update)
 # Start the GUI loop
 root.after(0, update)
 root.mainloop()
+
