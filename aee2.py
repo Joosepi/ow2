@@ -12,7 +12,7 @@ FOV = 100  # Field of View
 prediction_on = False
 
 # Load the DLL file
-dll_path = "path/to/dll/file.dll"
+dll_path = "Users\marti\OneDrive\Töölaud"
 my_dll = ctypes.WinDLL(dll_path)
 
 # Define the function that calls the DLL file
